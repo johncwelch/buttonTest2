@@ -17,28 +17,33 @@ struct buttonTest2App: App {
     }
 }
 
-@Observable  class Cell: Identifiable {
+@Observable class Cell: Identifiable {
 	let id = UUID()
 	var title: String = ""
+	var titleList: TitleState = .blank
 	var buttonToggled: Bool = false
 	var index: Int = 0
 	var xCoord: Int = 0
 	var yCoord: Int = 0
 	var backCol: Color = .gray
-}
 
-
-func buildStructArray(theGridSize: Int) -> [Cell] {
-	var myStructArray: [Cell] = []
-	let arraySize = (theGridSize * theGridSize) - 1
-	for i in 0...arraySize {
-		myStructArray.append(Cell())
+	/// Calculation for whether or not to disable the button above the grid.
+	func shouldDisableTopButton() -> Bool {
+		title == ""
 	}
 
-	for i in 0...arraySize {
-		myStructArray[i].index = i
+	/// Moved `buildStructArray` here, but renamed to `buildCellArray` (since we're in the Cell class).
+	/// Simplified from original by smooshing the two loops together.
+	static func buildCellArray(_ size: Int) -> [Cell] {
+		var myStructArray: [Cell] = []
+		let arraySize = (size * size) - 1
+		for i in 0...arraySize {
+			var cell = Cell()	
+			cell.index = i
+			myStructArray.append(cell)
+		}
+		return myStructArray
 	}
-	return myStructArray
 }
 
 func doSomethingElseOnClick(for myIndex: Int, myArray: [Cell]) -> (myColor: Color, myTitle: String, myCommitButtonStatus: Bool) {

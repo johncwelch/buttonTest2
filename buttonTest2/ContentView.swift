@@ -11,8 +11,13 @@ import Observation
 
 struct ContentView: View {
 	@State var buttonBlank1: Bool = true
+	@State var gridCells: [Cell]
+
+	init() {
+		gridCells = Cell.buildCellArray(3)
+	}
+
 	var body: some View {
-		@State var gridCellArr = buildStructArray(theGridSize: 3)
 		HStack {
 			Button {
 
@@ -28,15 +33,15 @@ struct ContentView: View {
 						GeometryReader { proxy in
 							let index = (row * 3) + col
 							Button {
-								var theTuple = doSomethingElseOnClick(for: gridCellArr[index].index, myArray: gridCellArr)
+								var theTuple = doSomethingElseOnClick(for: gridCells[index].index, myArray: gridCells)
 
-								gridCellArr[index].title = theTuple.myTitle
+								gridCells[index].title = theTuple.myTitle
 
 								//if the buttonBlank1.toggle() line isn't commented out (or really any line modifying buttonblank, you will never see the title change cycle correctly.
 								//I just need to ONLY enable that top button above the grid when the button i'm clicking on does not have a blank title, but I cannot figure out how to do it and not have the button title change work right.
 								//buttonBlank1.toggle()
 							} label: {
-								Text(gridCellArr[index].title)
+								Text(gridCells[index].title)
 									.frame(width: proxy.frame(in: .global).width,height: proxy.frame(in: .global).height)
 							}
 						}
