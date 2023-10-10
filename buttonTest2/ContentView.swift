@@ -10,7 +10,7 @@ import Observation
 
 
 struct ContentView: View {
-	@State var buttonBlank1: Bool = true
+	@State var buttonDisabled: Bool = true
 	@State var gridCells: [Cell]
 
 	init() {
@@ -24,7 +24,7 @@ struct ContentView: View {
 			} label: {
 				Text("Button2")
 			}
-			.disabled(buttonBlank1)
+			.disabled(buttonDisabled)
 		}
 		Grid(horizontalSpacing: 0, verticalSpacing: 0) {
 			ForEach(0...2, id: \.self) { row in
@@ -39,7 +39,7 @@ struct ContentView: View {
 
 								//if the buttonBlank1.toggle() line isn't commented out (or really any line modifying buttonblank, you will never see the title change cycle correctly.
 								//I just need to ONLY enable that top button above the grid when the button i'm clicking on does not have a blank title, but I cannot figure out how to do it and not have the button title change work right.
-								//buttonBlank1.toggle()
+								buttonDisabled = gridCells[index].shouldDisableTopButton()
 							} label: {
 								Text(gridCells[index].title)
 									.frame(width: proxy.frame(in: .global).width,height: proxy.frame(in: .global).height)
