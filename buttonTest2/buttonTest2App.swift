@@ -20,7 +20,7 @@ struct buttonTest2App: App {
 @Observable class Cell: Identifiable {
 	let id = UUID()
 	var title: String = ""
-	var titleList: TitleState = .blank
+	var titleState: TitleState = .blank
 	var buttonToggled: Bool = false
 	var index: Int = 0
 	var xCoord: Int = 0
@@ -51,8 +51,8 @@ func doSomethingElseOnClick(for myIndex: Int, myArray: [Cell]) -> (myColor: Colo
 	var theColor: Color
 
 	let button = myArray[myIndex]
-	button.titleList = myArray[myIndex].titleList.nextTitle()
-	button.title = button.titleList.description
+	button.titleState = myArray[myIndex].titleState.nextTitle()
+	button.title = button.titleState.description
 
 	if button.index <= 7 {
 		let touchedButton = myArray[myIndex + 1]
@@ -63,7 +63,7 @@ func doSomethingElseOnClick(for myIndex: Int, myArray: [Cell]) -> (myColor: Colo
 		theColor = .blue
 		touchedButton.color = .blue
 	}
-	print(button.titleList.debugDescription)
+	print(button.titleState.debugDescription)
 
 
 	let theReturnTuple = (myColor: theColor, myTitle: myArray[myIndex].title, myCommitButtonStatus: theCommitButtonStatus)
