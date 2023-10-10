@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		38D1E6342AD5CEDB0093FE5C /* TitleState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D1E6332AD5CEDB0093FE5C /* TitleState.swift */; };
 		702892FB2AD35A3E00BEC5CB /* buttonTest2App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 702892FA2AD35A3E00BEC5CB /* buttonTest2App.swift */; };
 		702892FD2AD35A3E00BEC5CB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 702892FC2AD35A3E00BEC5CB /* ContentView.swift */; };
 		702892FF2AD35A4000BEC5CB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 702892FE2AD35A4000BEC5CB /* Assets.xcassets */; };
@@ -14,6 +15,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		38D1E6332AD5CEDB0093FE5C /* TitleState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleState.swift; sourceTree = "<group>"; };
 		702892F72AD35A3E00BEC5CB /* buttonTest2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = buttonTest2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		702892FA2AD35A3E00BEC5CB /* buttonTest2App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = buttonTest2App.swift; sourceTree = "<group>"; };
 		702892FC2AD35A3E00BEC5CB /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -55,6 +57,7 @@
 			isa = PBXGroup;
 			children = (
 				702892FA2AD35A3E00BEC5CB /* buttonTest2App.swift */,
+				38D1E6332AD5CEDB0093FE5C /* TitleState.swift */,
 				702892FC2AD35A3E00BEC5CB /* ContentView.swift */,
 				702892FE2AD35A4000BEC5CB /* Assets.xcassets */,
 				702893032AD35A4000BEC5CB /* buttonTest2.entitlements */,
@@ -141,6 +144,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				38D1E6342AD5CEDB0093FE5C /* TitleState.swift in Sources */,
 				702892FD2AD35A3E00BEC5CB /* ContentView.swift in Sources */,
 				702892FB2AD35A3E00BEC5CB /* buttonTest2App.swift in Sources */,
 			);
