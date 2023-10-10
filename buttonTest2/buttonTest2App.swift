@@ -25,7 +25,7 @@ struct buttonTest2App: App {
 	var index: Int = 0
 	var xCoord: Int = 0
 	var yCoord: Int = 0
-	var backCol: Color = .gray
+	var color: Color = .gray
 
 	/// Calculation for whether or not to disable the button above the grid.
 	func shouldDisableTopButton() -> Bool {
@@ -48,39 +48,23 @@ struct buttonTest2App: App {
 
 func doSomethingElseOnClick(for myIndex: Int, myArray: [Cell]) -> (myColor: Color, myTitle: String, myCommitButtonStatus: Bool) {
 	var theCommitButtonStatus: Bool = true
-	//print("\(myArray[myIndex].title)")
-	//print("\(myIndex)")
-	switch myArray[myIndex].title {
-		case "":
-			myArray[myIndex].title = "S"
-			theCommitButtonStatus = false
-			print("blank case")
-		case "S":
-			myArray[myIndex].title = "O"
-			theCommitButtonStatus = false
-			print("S case")
-		case "O":
-			myArray[myIndex].title = ""
-			theCommitButtonStatus = true
-			print("O case")
-		default:
-			print("Something went wrong, try restarting the app")
-	}
-
-	print("\(myArray[myIndex].title)")
-	if myArray[myIndex].title == "Button" {
-		print("it's a button")
-	}
 	var theColor: Color
-	if myIndex <= 7 {
-		let testIndex = myIndex + 1
-		//print("\(myArray[testIndex].index)")
-		theColor = Color.green
+
+	let button = myArray[myIndex]
+	button.titleList = myArray[myIndex].titleList.nextTitle()
+	button.title = button.titleList.description
+
+	if button.index <= 7 {
+		let touchedButton = myArray[myIndex + 1]
+		theColor = .green
+		touchedButton.color = .green
 	} else {
-		let testIndex = myIndex - 1
-		//print("\(myArray[testIndex].index)")
-		theColor = Color.blue
+		let touchedButton = myArray[myIndex - 1]
+		theColor = .blue
+		touchedButton.color = .blue
 	}
+	print(button.titleList.debugDescription)
+
 
 	let theReturnTuple = (myColor: theColor, myTitle: myArray[myIndex].title, myCommitButtonStatus: theCommitButtonStatus)
 	return theReturnTuple
