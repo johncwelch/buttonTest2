@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Observation
 
 @main
 struct buttonTest2App: App {
