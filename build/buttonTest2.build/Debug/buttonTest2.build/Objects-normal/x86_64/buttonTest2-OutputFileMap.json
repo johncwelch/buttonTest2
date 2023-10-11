@@ -34,5 +34,15 @@
     "object" : "/Users/jwelch/Desktop/buttonTest2/build/buttonTest2.build/Debug/buttonTest2.build/Objects-normal/x86_64/ContentView.o",
     "swift-dependencies" : "/Users/jwelch/Desktop/buttonTest2/build/buttonTest2.build/Debug/buttonTest2.build/Objects-normal/x86_64/ContentView.swiftdeps",
     "swiftmodule" : "/Users/jwelch/Desktop/buttonTest2/build/buttonTest2.build/Debug/buttonTest2.build/Objects-normal/x86_64/ContentView~partial.swiftmodule"
+  },
+  "/Users/jwelch/Desktop/buttonTest2/buttonTest2/TitleState.swift" : {
+    "const-values" : "/Users/jwelch/Desktop/buttonTest2/build/buttonTest2.build/Debug/buttonTest2.build/Objects-normal/x86_64/TitleState.swiftconstvalues",
+    "dependencies" : "/Users/jwelch/Desktop/buttonTest2/build/buttonTest2.build/Debug/buttonTest2.build/Objects-normal/x86_64/TitleState.d",
+    "diagnostics" : "/Users/jwelch/Desktop/buttonTest2/build/buttonTest2.build/Debug/buttonTest2.build/Objects-normal/x86_64/TitleState.dia",
+    "index-unit-output-path" : "/buttonTest2.build/Debug/buttonTest2.build/Objects-normal/x86_64/TitleState.o",
+    "llvm-bc" : "/Users/jwelch/Desktop/buttonTest2/build/buttonTest2.build/Debug/buttonTest2.build/Objects-normal/x86_64/TitleState.bc",
+    "object" : "/Users/jwelch/Desktop/buttonTest2/build/buttonTest2.build/Debug/buttonTest2.build/Objects-normal/x86_64/TitleState.o",
+    "swift-dependencies" : "/Users/jwelch/Desktop/buttonTest2/build/buttonTest2.build/Debug/buttonTest2.build/Objects-normal/x86_64/TitleState.swiftdeps",
+    "swiftmodule" : "/Users/jwelch/Desktop/buttonTest2/build/buttonTest2.build/Debug/buttonTest2.build/Objects-normal/x86_64/TitleState~partial.swiftmodule"
   }
 }
